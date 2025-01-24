@@ -11,7 +11,16 @@ db = client["khalilleo"]
 collection_cotisations = db["cotisations"]
 collection_caisse_membre = db["caisse_membre"]
 collection_actions = db["actions"]
+def initialize_collections():
+    dummy_data = {"init": True}
+    if collection_cotisations.count_documents({}) == 0:
+        collection_cotisations.insert_one(dummy_data)
+    if collection_caisse_membre.count_documents({}) == 0:
+        collection_caisse_membre.insert_one(dummy_data)
+    if collection_actions.count_documents({}) == 0:
+        collection_actions.insert_one(dummy_data)
 
+initialize_collections()
 # Add a cotisation
 @app.route('/ajouter_cotisation', methods=['POST'])
 def ajouter_cotisation():
