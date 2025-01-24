@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 # MongoDB connection
-client = MongoClient("mongodb+srv://khalilleo:khalilleo@cluster0.bfwkb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", serverSelectionTimeoutMS=5000)
+client = MongoClient('mongodb+srv://khalilleo:khalilleo@cluster0.bfwkb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', serverSelectionTimeoutMS=5000)
 db = client["khalilleo"]
 collection_cotisations = db["cotisations"]
 collection_caisse_membre = db["caisse_membre"]
