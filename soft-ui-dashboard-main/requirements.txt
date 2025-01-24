@@ -2,4 +2,5 @@ eel
 pymongo
 gunicorn
 flask
+flask_cors
 
